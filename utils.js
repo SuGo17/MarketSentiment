@@ -1,15 +1,15 @@
-const { thresholdKey, telegramConfig } = require("./enum");
+const { thresholdKey } = require("./enum");
 const yahooFinance = require("yahoo-finance2").default;
 
 const SendTelegramMessage = async (message) => {
-  const url = `https://api.telegram.org/bot${telegramConfig.token}/sendMessage`;
+  const url = `https://api.telegram.org/bot${process.env.TELEGRAM_TOKEN}/sendMessage`;
   const payload = {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      chat_id: telegramConfig.chatId,
+      chat_id: process.env.TELEGRAM_CHAT_ID,
       text: message,
       parse_mode: "HTML",
     }),

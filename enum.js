@@ -14,7 +14,6 @@ const ONE_HOUR = 60 * ONE_MIN;
 
 module.exports = {
   symbol,
-  telegramConfig,
   thresholdKey,
   time: { ONE_SEC, ONE_MIN, ONE_HOUR },
 };
