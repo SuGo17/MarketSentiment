@@ -39,22 +39,4 @@ const MarketSentiment = async (market) => {
   }
 };
 
-const USMarketSentimentCron = async () => {
-  try {
-    await MarketSentiment("US");
-  } catch (err) {
-    console.log("Something went wrong, will try again in one min...");
-    setTimeout(USMarketSentimentCron, time.ONE_MIN);
-  }
-};
-
-const IndianMarketSentimentCron = async () => {
-  try {
-    await MarketSentiment("INDIA");
-  } catch (err) {
-    console.log("Something went wrong, will try again in one min...");
-    setTimeout(IndianMarketSentimentCron, time.ONE_MIN);
-  }
-};
-
-module.exports = { USMarketSentimentCron, IndianMarketSentimentCron };
+module.exports = { MarketSentiment };
