@@ -1,5 +1,6 @@
 const { time } = require("./enum");
 const { MarketSentiment } = require("./MarketSentiment");
+require("dotenv").config();
 
 const USMarketSentimentCron = async () => {
   try {

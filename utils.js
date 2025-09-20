@@ -18,6 +18,7 @@ const SendTelegramMessage = async (message) => {
     await fetch(url, payload);
   } catch (error) {
     console.error("Error sending message:", error);
+    throw new Error(error);
   }
 };
 
